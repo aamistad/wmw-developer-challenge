@@ -1,0 +1,73 @@
+{% comment %}
+------------------------------------------------------------------------------
+  Section: Featured collection
+  - This the main section that you should be working on
+  - Main styling is done in /styles/sections/featured-collection.scss
+------------------------------------------------------------------------------
+{% endcomment %}
+
+<section class="featured-collection" data-section-id="{{ section.id }}" data-section-type="featured-collection">
+  {%- assign collection = collections[section.settings.collection] -%}
+  
+  <div class="featured-collection__header">
+    <h2 class="featured-collection__heading">{{ collection.title | escape }}</h2>
+
+    <p class="featured-collection__copy">{{ collection.description }}</p>
+  </div>
+
+  <div class="featured-collection__products js-collection-carousel">
+    {% for product in collection.products limit: 6 %}
+      {% assign current_variant = product.selected_or_first_available_variant %}
+    
+      <a class="featured-collection__product"href="{{ product.url | within: collection }}">
+        <div class="featured-collection__thumbnail">
+          {% if product.featured_image != blank %}
+            {{ product.featured_image | img_url: 'large' | img_tag }}
+          {% endif %}
+          
+          {% if product.compare_at_price_min > 0 %}
+            <span class="featured-collection__tag">Sale</span>
+          {% endif %}
+          
+          <button class="featured-collection__cart button button--secondary js-ajax-cart" js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</button>
+        </div>
+
+        <div class="featured-collection__description">
+          <p class="featured-collection__title">{{ product.title | escape }}</p>
+
+          <span class="featured-collection__price">
+            {% include 'product-price' %}
+          </span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+  <div class="featured-collection__footer">
+    <a class="button button--primary" href="{{ collections[featured].url }}">View Collection</a>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Featured collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured collection"
+      },
+      {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured collection",
+        "category": "Collection"
+      }
+    ]
+  }
+{% endschema %}

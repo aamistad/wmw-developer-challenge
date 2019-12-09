@@ -1,0 +1,48 @@
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  border: 0;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  user-select: none;
+  appearance: none;
+  padding:12px;
+  font-size:1.4rem;
+  line-height:1.7rem;
+  font-weight: 700;
+  transition: 0.3s ease-in-out;
+
+  &--primary{
+    background:#003366;
+    color:#fff;
+    border:1px solid transparent;
+    &:focus,
+    &:hover{
+      background:#fff;
+      color:#003366;
+      border-color:#003366;
+    }  
+  }
+  &--secondary{
+    background:#fff;
+    color:#003366;
+
+    &:hover,
+    &:focus{
+      background:#003366;
+      color:#fff;
+    }
+  }
+}
+
+@include media-query($medium-up) {
+  .featured-collection{
+      .button{
+        padding:15px 15px 17px;
+        font-size:1.8rem;
+        line-height:2.3rem;
+      }
+  }
+}

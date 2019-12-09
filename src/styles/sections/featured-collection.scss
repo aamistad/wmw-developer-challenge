@@ -1,0 +1,212 @@
+/**
+ * Sections: Featured collection
+ * -----------------------------------------------------------------------------
+ * Base styling for the featured collection product grid.
+ *
+ */
+
+ $brandLight:#ffffff;
+ $brandAccent:#003366;
+ $bodyCopy:#9B9B9B;
+ $uiControls:#d1d1d1;
+ $uiActive:#333333;
+
+ 
+.featured-collection {
+    font-family: "Helvetica Neue", "arial", "sans-serif";
+    max-width:1440px;
+    padding:0 25px;
+    margin:0 auto;
+
+    &__products{
+        margin-bottom:32px;   
+    }
+    &__product{
+        width:100%;
+        text-decoration: none;
+        &:focus,
+        &:hover{
+            .featured-collection__cart{
+                opacity: 1;
+            }
+        }
+    }
+    &__thumbnail{
+        position:relative;
+        text-align:center;
+        margin-bottom:18px;
+        img{
+            width:100%;
+        }
+    }
+    &__cart{
+        position:absolute;
+        left:50%;
+        bottom: 18px;
+        transform:translateX(-50%);
+        width:calc(100% - 36px);
+        opacity: 0;
+        &.added{
+            background:$brandAccent;
+            color:$brandLight;
+            opacity:1
+        }
+    }
+    &__tag{
+        position:absolute;
+        top:10px;
+        right:10px;
+        font-size:1.4rem;
+        line-height:1.7rem;
+        color:$brandLight;
+        background:$brandAccent;
+        font-weight: 700;
+        padding:5px;
+        width:56px;
+        text-align: center;;
+    }
+    &__header{
+        margin-bottom:28px;
+    }
+    &__heading{
+        text-align:center;
+        color:$brandAccent;
+        font-size:2.8rem;
+        line-height:3.4rem;
+        padding-top:30px;
+        max-width:611px;
+        text-align:center;
+        margin:0 auto 8px;
+    }
+    &__title{
+        font-size:1.8rem;
+        line-height: 2.3rem;
+        font-weight: 700;
+        color: $brandAccent;
+        margin-bottom:18px;
+        margin-top:0px;
+    }
+    &__copy{
+        max-width:611px;
+        text-align:center;
+        margin:0 auto 19px;
+        font-size:1.4rem;
+        line-height:2.1rem;
+        color: $bodyCopy;
+        font-weight: 300;
+    }
+
+    &__price{
+        color: $bodyCopy;
+        font-size:1.8rem;
+        line-height:1.8rem;
+        font-weight:300;
+    }
+    &__footer{
+        text-align:center;
+        padding-top:30px;
+        margin-bottom:30px; 
+    }
+}
+
+.flickity-button{
+    color:$uiControls;
+    transition: 0.3s ease-in-out;
+    border-radius: 0px;
+    &:focus,
+    &:hover{
+        background:$brandAccent;
+        color:$brandLight;;
+    }
+}
+.flickity-button:disabled{
+    display:none;
+}
+.flickity-page-dots{
+    bottom:-37px;
+    left:0px;
+}
+.flickity-prev-next-button {
+    display:none;
+    transform: translateY(-205%);
+    padding:0px;
+}
+.flickity-page-dots .dot{
+    width:7px;
+    height:7px;
+    opacity: 1;
+    background:$uiControls;
+    margin:0 9px;
+}
+.flickity-page-dots .dot.is-selected{
+    background:$uiActive;
+}
+
+
+@include media-query($medium-up) {
+
+    .featured-collection {
+        &__header{
+            margin-bottom:41px;
+        }
+        &__heading{
+            font-size:4rem;
+            line-height:4.9rem;
+            padding-top:60px;
+            margin-bottom:19px;
+        }
+        &__products{
+            padding:0 39px;
+        }
+        &__product{
+            padding:0 11px;
+            width:50%
+        }
+        &__thumbnail{
+            margin-bottom:16px;
+        }
+        &__title{
+            font-size:2.1rem;
+            line-height: 2.6rem;
+            margin-bottom:10px;
+        }
+        &__copy{
+            font-size:1.8rem;
+            line-height:2.6rem;
+        }
+        &__price{
+            font-size:1.8rem;
+            line-height:2.6rem;
+        }
+        &__footer{
+            padding-top:47px;
+        }
+    }
+    .flickity-page-dots{
+        bottom:-34px;
+    }
+    .flickity-prev-next-button {
+        display:block;
+    }
+    .flickity-button-icon{
+        top:21%;
+    }
+    .flickity-prev-next-button.previous {
+        left: -11px;
+    }
+    .flickity-prev-next-button.next {
+        right: -11px;
+        .flickity-button-icon{
+            left: 14%;
+        }
+    }
+}
+
+@include media-query($large-up) {
+    .featured-collection{
+
+        &__product{
+            width:25%
+        }
+    }
+}
