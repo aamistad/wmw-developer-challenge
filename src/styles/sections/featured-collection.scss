@@ -107,41 +107,40 @@
         padding-top:30px;
         margin-bottom:30px; 
     }
-}
-
-.flickity-button{
-    color:$uiControls;
-    transition: 0.3s ease-in-out;
-    border-radius: 0px;
-    &:focus,
-    &:hover{
-        background:$brandAccent;
-        color:$brandLight;;
+    .flickity-button{
+        color:$uiControls;
+        transition: 0.3s ease-in-out;
+        border-radius: 0px;
+        &:focus,
+        &:hover{
+            background:$brandAccent;
+            color:$brandLight;;
+        }
     }
+    .flickity-button:disabled{
+        display:none;
+    }
+    .flickity-page-dots{
+        bottom:-37px;
+        left:0px;
+    }
+    .flickity-prev-next-button {
+        display:none;
+        transform: translateY(-205%);
+        padding:0px;
+    }
+    .flickity-page-dots .dot{
+        width:7px;
+        height:7px;
+        opacity: 1;
+        background:$uiControls;
+        margin:0 9px;
+    }
+    .flickity-page-dots .dot.is-selected{
+        background:$uiActive;
+    }
+    
 }
-.flickity-button:disabled{
-    display:none;
-}
-.flickity-page-dots{
-    bottom:-37px;
-    left:0px;
-}
-.flickity-prev-next-button {
-    display:none;
-    transform: translateY(-205%);
-    padding:0px;
-}
-.flickity-page-dots .dot{
-    width:7px;
-    height:7px;
-    opacity: 1;
-    background:$uiControls;
-    margin:0 9px;
-}
-.flickity-page-dots .dot.is-selected{
-    background:$uiActive;
-}
-
 
 @include media-query($medium-up) {
 
@@ -181,23 +180,23 @@
         &__footer{
             padding-top:47px;
         }
-    }
-    .flickity-page-dots{
-        bottom:-34px;
-    }
-    .flickity-prev-next-button {
-        display:block;
-    }
-    .flickity-button-icon{
-        top:21%;
-    }
-    .flickity-prev-next-button.previous {
-        left: -11px;
-    }
-    .flickity-prev-next-button.next {
-        right: -11px;
+        .flickity-page-dots{
+            bottom:-34px;
+        }
+        .flickity-prev-next-button {
+            display:block;
+        }
         .flickity-button-icon{
-            left: 14%;
+            top:21%;
+        }
+        .flickity-prev-next-button.previous {
+            left: -11px;
+        }
+        .flickity-prev-next-button.next {
+            right: -11px;
+            .flickity-button-icon{
+                left: 14%;
+            }
         }
     }
 }
