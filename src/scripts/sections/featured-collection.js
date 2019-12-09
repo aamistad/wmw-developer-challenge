@@ -19,6 +19,7 @@ register('featured-collection', {
   init() {
     window.console.log('Initialising featured collection section');
 
+    // initialize carousel
     var elem = document.querySelector('.js-collection-carousel');
     var flkty = new Flickity( elem, {
       // options
@@ -31,14 +32,20 @@ register('featured-collection', {
       }
     });
     
+    // declare add to cart buttons
     const cartButtons = document.querySelectorAll('.js-ajax-cart');
 
+    // loop each button and bind click event to it
     cartButtons.forEach((button,index)=>{
       button.addEventListener('click', (e)=>{
+        
         e.preventDefault();
+
+        // get id and quantity of product
         const variantId = button.getAttribute('data-variant-id'),
               qty = button.getAttribute('data-quantity');
         
+        // call add to cart function passing id and qty. When complete call confirm function
         this.addToCart(variantId,qty).then(this.addToCartConfirm(button));
       });
     });
@@ -59,13 +66,18 @@ register('featured-collection', {
 
   },
   addToCartConfirm(button){
+    //store previous text to revert back to
     const prevText = button.innerHTML;
+
+    // disable button, add class to make visible, and change text to confirm added to cart
     button.disabled = true;
     button.classList.toggle('added');
     button.innerHTML = 'Added to cart';
     
+    // get cart quantity then update cart count 
     this.getCart().then(resp=>this.updateCartCount(resp));
 
+    // after 2 seconds revert back to original button and enable again
     setTimeout(()=>{
       button.classList.toggle('added');
       button.innerHTML = prevText;
@@ -84,6 +96,8 @@ register('featured-collection', {
   },
   updateCartCount(count){
     const cart = document.querySelector('.js-cart-count');
+    // increase count of cart items by 1. To make more dynamic it could take the quantity,
+    // Working under the assumption that this component will only be ever to add 1 product at a time
     cart.innerHTML = ' ('+(count.item_count+1)+')';
   },
   publicMethod() {
