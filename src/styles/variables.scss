@@ -1,12 +1,68 @@
 /**
+ * Theme Colours
+ */
+$BRAND_LIGHT: rgba(255, 255, 255, 1);
+$BRAND_ACCENT: rgba(0, 51, 102, 1);
+$BODY_COPY: rgba(155, 155, 155, 1);
+$UI_CONTROLS: rgba(209, 209, 209, 1);
+$UI_ACTIVE: rgba(51, 51, 51, 1);
+
+/**
+ * Heading Font Sizes
+ */
+$MOBILE_HEADING_1: 2.8rem;
+$MOBILE_HEADING_2: 2.4rem;
+$MOBILE_HEADING_3: 2.1rem;
+$MOBILE_HEADING_4: 1.8rem;
+$MOBILE_HEADING_5: 1.6rem;
+$MOBILE_HEADING_6: 1.4rem;
+
+$MOBILE_HEADING_LH_1: 3.4rem;
+$MOBILE_HEADING_LH_2: 2.9rem;
+$MOBILE_HEADING_LH_3: 2.6rem;
+$MOBILE_HEADING_LH_4: 2.3rem;
+$MOBILE_HEADING_LH_5: 1.9rem;
+$MOBILE_HEADING_LH_6: 2.3rem;
+
+$DESKTOP_HEADING_1: 4rem;
+$DESKTOP_HEADING_2: 3.6rem;
+$DESKTOP_HEADING_3: 3rem;
+$DESKTOP_HEADING_4: 2.4rem;
+$DESKTOP_HEADING_5: 2.1rem;
+$DESKTOP_HEADING_6: 1.7rem;
+
+$DESKTOP_HEADING_LH_1: 4.9rem;
+$DESKTOP_HEADING_LH_2: 4.4rem;
+$DESKTOP_HEADING_LH_3: 3.7rem;
+$DESKTOP_HEADING_LH_4: 2.9rem;
+$DESKTOP_HEADING_LH_5: 2.6rem;
+$DESKTOP_HEADING_LH_6: 2.3rem;
+
+/**
+ * Button Font Sizes
+ */
+$MOBILE_BUTTON_PADDING: 12px;
+$MOBILE_BUTTON_FONT_SIZE: 1.4rem;
+$MOBILE_BUTTON_LINE_HEIGHT: 1.4rem;
+$DESKTOP_BUTTON_PADDING: 15px 15px 17px;
+$DESKTOP_BUTTON_FONT_SIZE: 1.8rem;
+$DESKTOP_BUTTON_LINE_HEIGHT: 2.3rem;
+
+/**
+ *  Font Weights
+ */
+$FONT_WEIGHT_NORMAL: 300;
+$FONT_WEIGHT_BOLD: 700;
+
+/**
  * Text colors.
  */
-$color-body-text: 'aktiv-grotesk', sans-serif;
+$color-body-text: helvetica, arial, sans-serif;
 
 /**
  * Background colors.
  */
-$color-body: 'aktiv-grotesk', sans-serif;
+$color-body: helvetica, arial, sans-serif;
 
 /**
  * Placeholders.
@@ -33,7 +89,7 @@ $color-success-bg: #000000;
 /**
  * Typography.
  */
-$font-heading: 'aktiv-grotesk', sans-serif;
+$font-heading: helvetica, arial, sans-serif;
 $font-body: var(--font-body);
 $font-body-weight: var(--font-body-weight);
 $font-body-style: var(--font-body-style);
@@ -42,8 +98,8 @@ $font-body-bold-weight: var(--font-body-bold-weight);
 /**
  * Transitions.
  */
-$transition-duration: 250ms;
-$transition-timing: ease-in-out;
+$TRANSITION_DURATION: 0.3s;
+$TRANSITION_TIMING: ease-in-out;
 
 /**
  * Grid values.
@@ -58,22 +114,22 @@ $grid-gutter: 30px;
  * Breakpoints.
  * - To be used with the media-query mixin.
  */
-$small: 'small';
-$medium: 'medium';
-$medium-down: 'medium-down';
-$medium-up: 'medium-up';
-$large: 'large';
-$large-down: 'large-down';
-$large-up: 'large-up';
-$widescreen: 'widescreen';
+$small: "small";
+$medium: "medium";
+$medium-down: "medium-down";
+$medium-up: "medium-up";
+$large: "large";
+$large-down: "large-down";
+$large-up: "large-up";
+$widescreen: "widescreen";
 
 $breakpoints: (
-  $small '(max-width: #{$grid-medium - 1})',
-  $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
-  $medium-down '(max-width: #{$grid-large - 1})',
-  $medium-up '(min-width: #{$grid-medium})',
-  $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
-  $large-down '(max-width: #{$grid-widescreen - 1})',
-  $large-up '(min-width: #{$grid-large})',
-  $widescreen '(min-width: #{$grid-widescreen})'
+  $small "(max-width: #{$grid-medium - 1})",
+  $medium "(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})",
+  $medium-down "(max-width: #{$grid-large - 1})",
+  $medium-up "(min-width: #{$grid-medium})",
+  $large "(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})",
+  $large-down "(max-width: #{$grid-widescreen - 1})",
+  $large-up "(min-width: #{$grid-large})",
+  $widescreen "(min-width: #{$grid-widescreen})"
 );
