@@ -24,19 +24,19 @@ $prev_next_button_radius: 0;
     transform: translateY(-205%);
     padding: 0;
   }
-  &-page-dots {
+  &-page-dots{
     bottom: -37px;
     left: 0;
-  }
-  .dot {
-    width: $dot_size;
-    height: $dot_size;
-    opacity: 1;
-    background: $UI_CONTROLS;
-    margin: 0 $dot_spacing;
-  }
-  .is-selected {
-    background: $UI_ACTIVE;
+    .dot {
+      width: $dot_size;
+      height: $dot_size;
+      opacity: 1;
+      background: $UI_CONTROLS;
+      margin: 0 $dot_spacing;
+    }
+    .is-selected {
+      background: $UI_ACTIVE;
+    }
   }
 }
 

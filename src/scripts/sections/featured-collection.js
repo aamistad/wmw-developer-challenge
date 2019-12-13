@@ -76,7 +76,7 @@ register('featured-collection', {
 
       // increase count of cart items by 1. To make more dynamic it could take the quantity,
       // Working under the assumption that this component will only be ever to add 1 product at a time
-      cart.innerHTML = ` (${count.item_count + 1})`;
+      cart.innerHTML = ` (${count.item_count})`;
     } else {
       throw new Error(`Failed to get request, Shopify returned ${result.status} ${result.statusText}`);
     }
