@@ -1,8 +1,15 @@
+/**
+ * Flickity Customization Parameters
+ */
+$dot_size: 7px;
+$dot_spacing: 9px;
+$prev_next_button_radius: 0;
+
 .flickity {
   &-button {
     color: $UI_CONTROLS;
     transition: $TRANSITION_DURATION $TRANSITION_TIMING;
-    border-radius: 0;
+    border-radius: $prev_next_button_radius;
     &:focus,
     &:hover {
       background: $BRAND_ACCENT;
@@ -22,11 +29,11 @@
     left: 0;
   }
   .dot {
-    width: 7px;
-    height: 7px;
+    width: $dot_size;
+    height: $dot_size;
     opacity: 1;
     background: $UI_CONTROLS;
-    margin: 0 9px;
+    margin: 0 $dot_spacing;
   }
   .is-selected {
     background: $UI_ACTIVE;
