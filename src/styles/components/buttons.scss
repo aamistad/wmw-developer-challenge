@@ -8,41 +8,39 @@
   text-decoration: none;
   user-select: none;
   appearance: none;
-  padding:12px;
-  font-size:1.4rem;
-  line-height:1.7rem;
+  padding: $MOBILE_BUTTON_PADDING;
+  font-size: $MOBILE_BUTTON_FONT_SIZE;
+  line-height: $MOBILE_BUTTON_FONT_SIZE;
+  transition: $TRANSITION_DURATION $TRANSITION_TIMING;
   font-weight: 700;
-  transition: 0.3s ease-in-out;
 
-  &--primary{
-    background:#003366;
-    color:#fff;
-    border:1px solid transparent;
+  &--primary {
+    background: $BRAND_ACCENT;
+    color: $BRAND_LIGHT;
+    border: 1px solid transparent;
     &:focus,
-    &:hover{
-      background:#fff;
-      color:#003366;
-      border-color:#003366;
-    }  
+    &:hover {
+      background: $BRAND_LIGHT;
+      color: $BRAND_ACCENT;
+      border-color: $BRAND_ACCENT;
+    }
   }
-  &--secondary{
-    background:#fff;
-    color:#003366;
+  &--secondary {
+    background: $BRAND_LIGHT;
+    color: $BRAND_ACCENT;
 
     &:hover,
-    &:focus{
-      background:#003366;
-      color:#fff;
+    &:focus {
+      background: $BRAND_ACCENT;
+      color: $BRAND_LIGHT;
     }
   }
 }
 
 @include media-query($medium-up) {
-  .featured-collection{
-      .button{
-        padding:15px 15px 17px;
-        font-size:1.8rem;
-        line-height:2.3rem;
-      }
+  .button {
+    padding: $DESKTOP_BUTTON_PADDING;
+    font-size: $DESKTOP_BUTTON_FONT_SIZE;
+    line-height: $DESKTOP_BUTTON_LINE_HEIGHT;
   }
 }

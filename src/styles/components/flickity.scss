@@ -1,0 +1,61 @@
+/**
+ * Flickity Customization Parameters
+ */
+$dot_size: 7px;
+$dot_spacing: 9px;
+$prev_next_button_radius: 0;
+
+.flickity {
+  &-button {
+    color: $UI_CONTROLS;
+    transition: $TRANSITION_DURATION $TRANSITION_TIMING;
+    border-radius: $prev_next_button_radius;
+    &:focus,
+    &:hover {
+      background: $BRAND_ACCENT;
+      color: $BRAND_LIGHT;
+    }
+    &:disabled {
+      display: none;
+    }
+  }
+  &-prev-next-button {
+    display: none;
+    transform: translateY(-205%);
+    padding: 0;
+  }
+  &-page-dots {
+    bottom: -37px;
+    left: 0;
+  }
+  .dot {
+    width: $dot_size;
+    height: $dot_size;
+    opacity: 1;
+    background: $UI_CONTROLS;
+    margin: 0 $dot_spacing;
+  }
+  .is-selected {
+    background: $UI_ACTIVE;
+  }
+}
+
+@include media-query($medium-up) {
+  .flickity {
+    &-page-dots {
+      bottom: -34px;
+    }
+    &-prev-next-button {
+      display: block;
+      .flickity-button-icon {
+        top: 21%;
+      }
+      &.previous {
+        left: -11px;
+      }
+      &.next {
+        right: -11px;
+      }
+    }
+  }
+}
